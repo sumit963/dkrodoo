@@ -18,6 +18,7 @@
         'views/isha_meditator.xml',
         'views/isha_program.xml',
         'wizard/volunteer_wizard.xml',
+        'templates/isha_meditator_mail_template.xml',
         'menus/menus.xml'
     ],
     'installable': True,

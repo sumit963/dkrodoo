@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="email_template_greetings" model="mail.template">
+            <field name="name">Greetings Email Template</field>
+            <field name="model_id" ref="model_isha_meditator" ></field>
+            <field name="subject">Greetings</field>
+            <field name="email_from">isha@meditator.com</field>
+            <field name="email_to">dummy@example.com</field>
+            <field name="body_html" type="html">
+                <div>
+                    <p>Namaskaram,</p>
+                    <p><t t-esc="object.name" /></p>
+                    <p>Pranam,</p>
+                    <p>Isha</p>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>

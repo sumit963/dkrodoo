@@ -25,7 +25,7 @@
               <form string="Isha Meditator">
                 <header>
                     <button name="action_open_volunteer_wizard" type="object" string="Volunteer for Short Term" context="{'default_volunteer_type': 'stv'}" />
-                    <button name="action_open_volunteer_wizard" type="object" string="Volunteer for Long Term" context="{'default_volunteer_type': 'ltv'}" />
+                    <button name="action_open_volunteer_wizard" type="object" string="Volunteer for Long Term" context="{'default_volunteer_type': 'stv'}" />
                 </header>
                 <sheet>
                     <group>
@@ -125,6 +125,17 @@
             <field name="name">Isha Meditator</field>
             <field name="res_model">isha.meditator</field>
             <field name="view_mode">tree,form,pivot,kanban</field>
+        </record>
+
+        <record id="action_isha_meditator_send_mail" model="ir.actions.server">
+            <field name="name">Send Mail</field>
+            <field name="model_id" ref="model_isha_meditator"/>
+            <field name="binding_model_id" ref="model_isha_meditator" />
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                action = records.action_send_mail()
+            </field>
         </record>
     </data>
 </odoo>

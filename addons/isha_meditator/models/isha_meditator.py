@@ -71,6 +71,10 @@ class IshaMeditator(models.Model):
             'target': 'new',
         }
     
+    def action_send_mail(self):
+        template = self.env.ref('isha_meditator.email_template_greetings')
+        template.send_mail(self.id)
+
 
 
 
