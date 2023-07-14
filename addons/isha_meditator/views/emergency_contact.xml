@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+        <record id="emergency_contact_tree_view" model="ir.ui.view">
+            <field name="name">emergency.contact.view.tree</field>
+            <field name="model">emergency.contact</field>
+            <field eval="7" name="priority"/>
+            <field name="arch" type="xml">
+                <tree string="Emergency Contact">
+                    <field name="name" />
+                    <field name="address"/>
+                    
+                </tree>
+            </field>
+        </record>
+
+        <record id="emergency_contact_form_view" model="ir.ui.view">
+            <field name="name">emergency.contact.view.form</field>
+            <field name="model">emergency.contact</field>
+            <field name="arch" type="xml">
+              <form string="Emergency Contact">
+                <sheet>
+                    <group>
+                        <!--<group>-->
+                            <field name="name" />
+                            <field name="dob" />
+                            <field name="iecdate" />
+                            <field name="gender"/>
+                            <field name="address"/>
+                            <field name="level" widget="priority"/>
+                            <field name="active"/>
+                            <field name="localcenter"/>
+                        <!--</group>-->
+                        <!--<group>-->
+                            <field name="interested_in_it"/>
+                            <field name="programs" widget="many2many_tags" />
+                        <!--</group>-->
+                    </group>
+                </sheet>
+              </form>
+            </field>
+        </record>
+
+       
+
+        <record model="ir.actions.act_window" id="action_isha_meditator_view">
+            <field name="name">Isha Meditator</field>
+            <field name="res_model">isha.meditator</field>
+            <field name="view_mode">tree,form,pivot,kanban</field>
+        </record>
+    </data>
+</odoo>

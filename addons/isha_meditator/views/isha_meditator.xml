@@ -9,8 +9,12 @@
                 <tree string="Isha Meditator">
                     <field name="name" />
                     <field name="dob" />
+                    <field name="iecdate" />
                     <field name="gender"/>
                     <field name="level" />
+                    <field name="address"/>
+                    <field name="active"/>
+                    <field name="localcenter"/>
                     <field name="interested_in_it" />
                     <field name="programs" widget="many2many_tags" />
                 </tree>
@@ -24,16 +28,20 @@
               <form string="Isha Meditator">
                 <sheet>
                     <group>
-                        <group>
+                        <!--<group>-->
                             <field name="name" />
                             <field name="dob" />
+                            <field name="iecdate" />
                             <field name="gender"/>
+                            <field name="address"/>
                             <field name="level" widget="priority"/>
-                        </group>
-                        <group>
-                            <field name="interested_in_it" />
+                            <field name="active"/>
+                            <field name="localcenter"/>
+                        <!--</group>-->
+                        <!--<group>-->
+                            <field name="interested_in_it"/>
                             <field name="programs" widget="many2many_tags" />
-                        </group>
+                        <!--</group>-->
                     </group>
                 </sheet>
               </form>
@@ -52,8 +60,8 @@
             </field>
         </record>
 
-        <record id="isha_meditator_pivot_view" model="ir.ui.view">
-            <field name="name">isha.meditator.pivot.view</field>
+        <record id="isha_meditator_kanban_view" model="ir.ui.view">
+            <field name="name">isha.meditator.kanban.view</field>
             <field name="model">isha.meditator</field>
             <field name="arch" type="xml">
                 <kanban default_group_by="level">

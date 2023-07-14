@@ -9,3 +9,7 @@ class IshaMeditator(models.Model):
     programs = fields.Many2many(comodel_name='isha.program', string="Programs")
     level = fields.Selection([('0', ''), ('basic', 'Basic'),('intermediate', 'Intermediate'), ('advanced', 'Advanced')], string='Level')
     interested_in_it = fields.Boolean("Interested in IT?")
+    address = fields.Text(string="Address")
+    active = fields.Boolean("Active")
+    localcenter = fields.Char(string="Local Center")
+    iecdate = fields.Date(string="IE Completion Date")
